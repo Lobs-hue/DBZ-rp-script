@@ -1,0 +1,117 @@
+-- // Get Players
+
+local function getPlayerDisplayNames()
+    local displayNames = {}
+    displayNameToUsername = {}  -- Reset mapping
+
+    for _, player in pairs(game.Players:GetPlayers()) do
+        local displayName = player.DisplayName
+        local username = player.Name
+        table.insert(displayNames, displayName)
+
+        -- Store the mapping
+        displayNameToUsername[displayName] = username
+    end
+
+    return displayNames
+end 
+
+
+-- // Library
+
+
+local Library = loadstring(game:HttpGet('https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua'))()
+
+local Window = Library.CreateLib(
+    'Advanced Kyron Jerking Techniques',
+    'DarkTheme'
+)
+
+local Sliders_Tab = Window:NewTab('Sliders')
+
+local Sliders_Section = Sliders_Tab:NewSection('Ykwim')
+
+local Forcefuls_Tab = Window:NewTab('Forcefuls')
+
+local Hakai_Section = Forcefuls_Tab:NewSection("Hakai")
+
+-- Sliders Section
+
+
+Sliders_Section:NewSlider('General Attack Size','Peakron',500,0,
+    function(s) -- 500 (MaxValue) | 0 (MinValue)
+        local args = {
+            [1] = {
+                ['Scope'] = 'AttackModule',
+                ['Info'] = {
+                    ['Custom'] = {
+                        ['Check'] = false,
+                        ['Slot'] = 0,
+                    },
+                    ['AtkFunct'] = 'SizeChange',
+                    ['AtkModule'] = 'BeamModule',
+                    ['ExtraInfo'] = {
+                        ['SizeChange'] = s,
+                    },
+                    ['AtkName'] = 'Gigantic Catastrophe',
+                },
+                ['Funct'] = 'UseAtk',
+            },
+        }
+
+        game
+            :GetService('ReplicatedStorage')
+            :WaitForChild('ClientFolder')
+            :WaitForChild('CoreRemote')
+            :FireServer(unpack(args))
+    end
+)
+
+-- // Forceful Section
+
+local Hakai_Dropdown = Hakai_Section:NewDropdown("Forceful Hakai", "You know what this is.", getPlayerDisplayNames(), function(selectedDisplayName)
+    local actualUsername = displayNameToUsername[selectedDisplayName]
+
+    if actualUsername then
+        local args = {
+            [1] = {
+                ["Scope"] = "AnimModule",
+                ["Info"] = {
+                    ["Participants"] = {[1] = actualUsername},
+                    ["Anim"] = "False Hakai"
+                },
+                ["Funct"] = "StartAnimation"
+            }
+        }
+
+        game:GetService("ReplicatedStorage"):WaitForChild("ClientFolder"):WaitForChild("CoreRemote"):FireServer(unpack(args))
+    end
+end)
+
+game.Players.PlayerAdded:Connect(function()
+    Hakai_Dropdown:Refresh(getPlayerDisplayNames())
+end)
+
+game.Players.PlayerRemoving:Connect(function()
+    Hakai_Dropdown:Refresh(getPlayerDisplayNames())
+end)
+
+Hakai_Section:NewButton("Forceful Hakai End", "IM BOUTTA BLOWW", function()
+    local args = {
+        [1] = {
+            ['Scope'] = 'AnimModule',
+            ['Info'] = {
+                ['Anim'] = 'False Hakai',
+                ['Choice'] = 'Destroy_Target',
+            },
+            ['Funct'] = 'AnimationFeature',
+        },
+    }
+    
+    game
+        :GetService('ReplicatedStorage')
+        :WaitForChild('ClientFolder')
+        :WaitForChild('CoreRemote')
+        :FireServer(unpack(args))
+    
+end)
