@@ -35,10 +35,18 @@ local Forcefuls_Tab = Window:NewTab('Forcefuls')
 
 local Hakai_Section = Forcefuls_Tab:NewSection("Hakai")
 
+local Lobs_Beams_Tab = Window:NewTab('Lobs Beams')
+
+local Lobs_Beams_Section = Lobs_Beams_Tab:NewSection("Ykwim")
+
+local X_Beams_Tab = Window:NewTab('Xai Beams')
+
+local X_Beams_Section = X_Beams_Tab:NewSection("Ykwim")
+
 -- // Sliders Section
 
 
-Sliders_Section:NewSlider('General Attack Size','Peakron',500,0,
+Sliders_Section:NewSlider('Beam Attack Size','Peakron',500,0,
     function(s) -- 500 (MaxValue) | 0 (MinValue)
         local args = {
             [1] = {
@@ -66,6 +74,30 @@ Sliders_Section:NewSlider('General Attack Size','Peakron',500,0,
             :FireServer(unpack(args))
     end
 )
+
+Sliders_Section:NewSlider('Bomb Attack Size','Peakron',650,0,function(s) -- 500 (MaxValue) | 0 (MinValue)
+    local args = {
+        [1] = {
+            ["Scope"] = "AttackModule",
+            ["Info"] = {
+                ["Custom"] = {
+                    ["Check"] = true,
+                    ["Slot"] = 2
+                },
+                ["AtkFunct"] = "SizeChange",
+                ["AtkModule"] = "BombModule",
+                ["ExtraInfo"] = {
+                    ["SizeChange"] = s
+                },
+                ["AtkName"] = "Crimson Nuke"
+            },
+            ["Funct"] = "UseAtk"
+        }
+    }
+    
+    game:GetService("ReplicatedStorage"):WaitForChild("ClientFolder"):WaitForChild("CoreRemote"):FireServer(unpack(args))
+end)
+
 
 -- // Forceful Section
 
@@ -109,4 +141,239 @@ Hakai_Section:NewButton("Forceful Hakai End", "Self explanatory!", function()
     }
     
     game:GetService('ReplicatedStorage'):WaitForChild('ClientFolder'):WaitForChild('CoreRemote'):FireServer(unpack(args))
+end)
+
+-- // Lobs Beams Tab
+
+Lobs_Beams_Section:NewButton("Multiple Cobalt Arrow", "Only if you want to erase everything.", function()
+    local args = {
+        [1] = {
+            ["Scope"] = "AttackModule",
+            ["Info"] = {
+                ["Custom"] = {
+                    ["Check"] = true,
+                    ["Slot"] = 4
+                },
+                ["AtkFunct"] = "Sequence2",
+                ["AtkModule"] = "BeamModule",
+                ["ExtraInfo"] = {
+                    ["BeamSize"] = 15.5
+                },
+                ["AtkName"] = "Cobalt Arrow"
+            },
+            ["Funct"] = "UseAtk"
+        }
+    }
+    
+    game:GetService("ReplicatedStorage"):WaitForChild("ClientFolder"):WaitForChild("CoreRemote"):FireServer(unpack(args))
+end)
+
+Lobs_Beams_Section:NewButton("Multiple Cobalt Erasure", "Could kill Lobs. Only use it as a sacrifice.", function()
+    local args = {
+        [1] = {
+            ["Scope"] = "AttackModule",
+            ["Info"] = {
+                ["Custom"] = {
+                    ["Check"] = true,
+                    ["Slot"] = 2
+                },
+                ["AtkFunct"] = "Sequence2",
+                ["AtkModule"] = "BeamModule",
+                ["ExtraInfo"] = {
+                    ["BeamSize"] = 15.5
+                },
+                ["AtkName"] = "Cobalt Erasure\13"
+            },
+            ["Funct"] = "UseAtk"
+        }
+    }
+    
+    game:GetService("ReplicatedStorage"):WaitForChild("ClientFolder"):WaitForChild("CoreRemote"):FireServer(unpack(args))                       
+end)
+
+Lobs_Beams_Section:NewButton("End General Beams", "Stop every beam (Fixes broken rings)", function()
+    local args = {
+        [1] = {
+            ["Scope"] = "AttackModule",
+            ["Info"] = {
+                ["Custom"] = {
+                    ["Check"] = true,
+                    ["Slot"] = 2
+                },
+                ["AtkFunct"] = "Sequence3",
+                ["AtkModule"] = "BeamModule",
+                ["ExtraInfo"] = {
+                    ["BeamSize"] = 15.5
+                },
+                ["AtkName"] = "Cobalt Erasure\13"
+            },
+            ["Funct"] = "UseAtk"
+        }
+    }
+    
+    game:GetService("ReplicatedStorage"):WaitForChild("ClientFolder"):WaitForChild("CoreRemote"):FireServer(unpack(args))
+end)
+
+-- // X Beams Tab
+
+X_Beams_Section:NewButton("Multiple Crimson Ends", "Self Explanatory", function()
+    local args = {
+        [1] = {
+            ["Scope"] = "AttackModule",
+            ["Info"] = {
+                ["Custom"] = {
+                    ["Check"] = true,
+                    ["Slot"] = 1
+                },
+                ["AtkFunct"] = "Sequence2",
+                ["AtkModule"] = "BeamModule",
+                ["ExtraInfo"] = {
+                    ["BeamSize"] = 15.5
+                },
+                ["AtkName"] = "Crimson End"
+            },
+            ["Funct"] = "UseAtk"
+        }
+    }
+    
+    game:GetService("ReplicatedStorage"):WaitForChild("ClientFolder"):WaitForChild("CoreRemote"):FireServer(unpack(args))
+end)
+
+X_Beams_Section:NewButton("Multi Death at Dusk", "Self Explanatory", function()
+    local args = {
+        [1] = {
+            ["Scope"] = "AttackModule",
+            ["Info"] = {
+                ["Custom"] = {
+                    ["Check"] = true,
+                    ["Slot"] = 5
+                },
+                ["AtkFunct"] = "Sequence2",
+                ["AtkModule"] = "BeamModule",
+                ["ExtraInfo"] = {
+                    ["BeamSize"] = 30
+                },
+                ["AtkName"] = "Death At Dusk"
+            },
+            ["Funct"] = "UseAtk"
+        }
+    }
+    
+    game:GetService("ReplicatedStorage"):WaitForChild("ClientFolder"):WaitForChild("CoreRemote"):FireServer(unpack(args))
+end)
+
+
+X_Beams_Section:NewButton("Multi LOTA", "Legacy of the Agnos", function()
+    local args = {
+        [1] = {
+            ["Scope"] = "AttackModule",
+            ["Info"] = {
+                ["Custom"] = {
+                    ["Check"] = true,
+                    ["Slot"] = 7
+                },
+                ["AtkFunct"] = "Sequence2",
+                ["AtkModule"] = "BeamModule",
+                ["ExtraInfo"] = {
+                    ["BeamSize"] = 15.5
+                },
+                ["AtkName"] = "Legacy Of The Agnos"
+            },
+            ["Funct"] = "UseAtk"
+        }
+    }
+    
+    game:GetService("ReplicatedStorage"):WaitForChild("ClientFolder"):WaitForChild("CoreRemote"):FireServer(unpack(args))
+end)
+
+X_Beams_Section:NewButton("Multi Singularity Beam", "Singularity Beam", function()
+    local args = {
+        [1] = {
+            ["Scope"] = "AttackModule",
+            ["Info"] = {
+                ["Custom"] = {
+                    ["Check"] = true,
+                    ["Slot"] = 10
+                },
+                ["AtkFunct"] = "Sequence2",
+                ["AtkModule"] = "BeamModule",
+                ["ExtraInfo"] = {
+                    ["BeamSize"] = 15.5
+                },
+                ["AtkName"] = "Singularity Beam"
+            },
+            ["Funct"] = "UseAtk"
+        }
+    }
+    
+    game:GetService("ReplicatedStorage"):WaitForChild("ClientFolder"):WaitForChild("CoreRemote"):FireServer(unpack(args))
+end)
+
+X_Beams_Section:NewButton("Multi SOTA", "Sorrow of the Agnos", function()
+    local args = {
+        [1] = {
+            ["Scope"] = "AttackModule",
+            ["Info"] = {
+                ["Custom"] = {
+                    ["Check"] = true,
+                    ["Slot"] = 6
+                },
+                ["AtkFunct"] = "Sequence2",
+                ["AtkModule"] = "BeamModule",
+                ["ExtraInfo"] = {
+                    ["BeamSize"] = 30
+                },
+                ["AtkName"] = "Sorrow Of The Agnos"
+            },
+            ["Funct"] = "UseAtk"
+        }
+    }
+    
+    game:GetService("ReplicatedStorage"):WaitForChild("ClientFolder"):WaitForChild("CoreRemote"):FireServer(unpack(args))
+end)
+
+X_Beams_Section:NewButton("Multiple Asura Cinder", "Sigmanardo", function()
+    local args = {
+        [1] = {
+            ["Scope"] = "AttackModule",
+            ["Info"] = {
+                ["Custom"] = {
+                    ["Check"] = true,
+                    ["Slot"] = 4
+                },
+                ["AtkFunct"] = "Sequence2",
+                ["AtkModule"] = "BeamModule",
+                ["ExtraInfo"] = {
+                    ["BeamSize"] = 30
+                },
+                ["AtkName"] = "Asura Cinder"
+            },
+            ["Funct"] = "UseAtk"
+        }
+    }
+    
+    game:GetService("ReplicatedStorage"):WaitForChild("ClientFolder"):WaitForChild("CoreRemote"):FireServer(unpack(args))
+end)
+
+X_Beams_Section:NewButton("End General Beams", "Stop every beam (Fixes broken rings)", function()
+    local args = {
+        [1] = {
+            ["Scope"] = "AttackModule",
+            ["Info"] = {
+                ["Custom"] = {
+                    ["Check"] = true,
+                    ["Slot"] = 2
+                },
+                ["AtkFunct"] = "Sequence3",
+                ["AtkModule"] = "BeamModule",
+                ["ExtraInfo"] = {
+                    ["BeamSize"] = 15.5
+                },
+                ["AtkName"] = "Cobalt Erasure\13"
+            },
+            ["Funct"] = "UseAtk"
+        }
+    }
+    
+    game:GetService("ReplicatedStorage"):WaitForChild("ClientFolder"):WaitForChild("CoreRemote"):FireServer(unpack(args))
 end)
