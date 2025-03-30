@@ -35,7 +35,7 @@ local Forcefuls_Tab = Window:NewTab('Forcefuls')
 
 local Hakai_Section = Forcefuls_Tab:NewSection("Hakai")
 
--- Sliders Section
+-- // Sliders Section
 
 
 Sliders_Section:NewSlider('General Attack Size','Peakron',500,0,
@@ -69,7 +69,7 @@ Sliders_Section:NewSlider('General Attack Size','Peakron',500,0,
 
 -- // Forceful Section
 
-local Hakai_Dropdown = Hakai_Section:NewDropdown("Forceful Hakai", "You know what this is.", getPlayerDisplayNames(), function(selectedDisplayName)
+local Hakai_Dropdown = Hakai_Section:NewDropdown("Forceful Hakai", "Force a False Hakai on anyone.", getPlayerDisplayNames(), function(selectedDisplayName)
     local actualUsername = displayNameToUsername[selectedDisplayName]
 
     if actualUsername then
@@ -96,7 +96,7 @@ game.Players.PlayerRemoving:Connect(function()
     Hakai_Dropdown:Refresh(getPlayerDisplayNames())
 end)
 
-Hakai_Section:NewButton("Forceful Hakai End", "IM BOUTTA BLOWW", function()
+Hakai_Section:NewButton("Forceful Hakai End", "Self explanatory!", function()
     local args = {
         [1] = {
             ['Scope'] = 'AnimModule',
@@ -108,10 +108,5 @@ Hakai_Section:NewButton("Forceful Hakai End", "IM BOUTTA BLOWW", function()
         },
     }
     
-    game
-        :GetService('ReplicatedStorage')
-        :WaitForChild('ClientFolder')
-        :WaitForChild('CoreRemote')
-        :FireServer(unpack(args))
-    
+    game:GetService('ReplicatedStorage'):WaitForChild('ClientFolder'):WaitForChild('CoreRemote'):FireServer(unpack(args))
 end)
