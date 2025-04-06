@@ -43,6 +43,14 @@ local X_Beams_Tab = Window:NewTab('Xai Beams')
 
 local X_Beams_Section = X_Beams_Tab:NewSection("Ykwim")
 
+local X_Forms_Tab = Window:NewTab('Xai Forms')
+
+local X_Forms_Section = X_Forms_Tab:NewSection("Ykwim")
+
+local Lobs_Forms_Tab = Window:NewTab('Lobs Forms')
+
+local Lobs_Forms_Section = Lobs_Forms_Tab:NewSection("Ykwim")
+
 -- // Sliders Section
 
 
@@ -376,4 +384,217 @@ X_Beams_Section:NewButton("End General Beams", "Stop every beam (Fixes broken ri
     }
     
     game:GetService("ReplicatedStorage"):WaitForChild("ClientFolder"):WaitForChild("CoreRemote"):FireServer(unpack(args))
+end)
+
+
+-- // X Forms Section
+
+X_Forms_Section:NewButton("Toggle Rainbow Form", "Sigmanardo", function()
+    -- Create the GUI and button
+local screenGui = Instance.new("ScreenGui")
+screenGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+
+local toggleButton = Instance.new("TextButton")
+toggleButton.Size = UDim2.new(0, 200, 0, 50)
+toggleButton.Position = UDim2.new(0, 10, 0.5, -25)
+toggleButton.Text = "Toggle Script"
+toggleButton.Parent = screenGui
+
+-- Variables for the state of the script
+local isScriptRunning = false
+
+local rs = game:GetService("RunService")
+
+local args4 = {
+    [1] = {
+        ["Scope"] = "TransformationModule",
+        ["Info"] = {
+            ["Setting"] = "Aura"
+        },
+        ["Funct"] = "AuraToggle"
+    }
+}
+
+local args3 = {
+    [1] = {
+        ["Scope"] = "OCModule",
+        ["Info"] = {},
+        ["Funct"] = "RetrieveInfo"
+    }
+}
+
+local args1 = {
+    [1] = {
+        ["Scope"] = "OCModule",
+        ["Info"] = {},
+        ["Funct"] = "FinishOCMaker"
+    }
+}
+
+-- Function to toggle the script and set colors
+toggleButton.MouseButton1Click:Connect(function()
+    isScriptRunning = not isScriptRunning
+
+    if isScriptRunning then
+        toggleButton.Text = "Stop Script"
+
+        while isScriptRunning do
+            local args2 = {
+                [1] = {
+                    ["Scope"] = "OCModule",
+                    ["Info"] = {
+                        ["Slot"] = "Ki1Colour",
+                        ["Colour"] = {
+                            [1] = math.random(0,255),
+                            [2] = math.random(0,255),
+                            [3] = math.random(0,255)
+                        },
+                        ["FormCustomising"] = {
+                            ["FormInfo"] = {},
+                            ["Active"] = false,
+                            ["FormName"] = ""
+                        }
+                    },
+                    ["Funct"] = "CheckColours"
+                }
+            }
+
+            -- Send the requests to the server
+            game:GetService("ReplicatedStorage"):WaitForChild("ClientFolder"):WaitForChild("CoreRemote"):FireServer(unpack(args1))
+            game:GetService("ReplicatedStorage"):WaitForChild("ClientFolder"):WaitForChild("CoreRemote"):FireServer(unpack(args2))
+            game:GetService("ReplicatedStorage"):WaitForChild("ClientFolder"):WaitForChild("CoreRemote"):FireServer(unpack(args3))
+            game:GetService("ReplicatedStorage"):WaitForChild("ClientFolder"):WaitForChild("CoreRemote"):FireServer(unpack(args4))
+
+            task.wait(1) -- Wait a bit before continuing the loop
+        end
+    else
+        toggleButton.Text = "Start Script"
+
+        -- Stop the script and set aura color to 90, 0, 0
+        local args2 = {
+            [1] = {
+                ["Scope"] = "OCModule",
+                ["Info"] = {
+                    ["Slot"] = "Ki1Colour",
+                    ["Colour"] = {90, 0, 0}, -- Set color to 90, 0, 0
+                    ["FormCustomising"] = {
+                        ["FormInfo"] = {},
+                        ["Active"] = false,
+                        ["FormName"] = ""
+                    }
+                },
+                ["Funct"] = "CheckColours"
+            }
+        }
+
+        -- Send the request to the server to update the aura color
+        game:GetService("ReplicatedStorage"):WaitForChild("ClientFolder"):WaitForChild("CoreRemote"):FireServer(unpack(args2))
+    end
+end)
+end)
+
+-- // Lobs Forms Section
+
+Lobs_Forms_Section:NewButton("Toggle Rainbow Form", "Sigmanardo", function()
+    -- Create the GUI and button
+local screenGui = Instance.new("ScreenGui")
+screenGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+
+local toggleButton = Instance.new("TextButton")
+toggleButton.Size = UDim2.new(0, 200, 0, 50)
+toggleButton.Position = UDim2.new(0, 10, 0.5, -25)
+toggleButton.Text = "Toggle Script"
+toggleButton.Parent = screenGui
+
+-- Variables for the state of the script
+local isScriptRunning = false
+
+local rs = game:GetService("RunService")
+
+local args4 = {
+    [1] = {
+        ["Scope"] = "TransformationModule",
+        ["Info"] = {
+            ["Setting"] = "Aura"
+        },
+        ["Funct"] = "AuraToggle"
+    }
+}
+
+local args3 = {
+    [1] = {
+        ["Scope"] = "OCModule",
+        ["Info"] = {},
+        ["Funct"] = "RetrieveInfo"
+    }
+}
+
+local args1 = {
+    [1] = {
+        ["Scope"] = "OCModule",
+        ["Info"] = {},
+        ["Funct"] = "FinishOCMaker"
+    }
+}
+
+-- Function to toggle the script and set colors
+toggleButton.MouseButton1Click:Connect(function()
+    isScriptRunning = not isScriptRunning
+
+    if isScriptRunning then
+        toggleButton.Text = "Stop Script"
+
+        while isScriptRunning do
+            local args2 = {
+                [1] = {
+                    ["Scope"] = "OCModule",
+                    ["Info"] = {
+                        ["Slot"] = "Ki1Colour",
+                        ["Colour"] = {
+                            [1] = math.random(0,255),
+                            [2] = math.random(0,255),
+                            [3] = math.random(0,255)
+                        },
+                        ["FormCustomising"] = {
+                            ["FormInfo"] = {},
+                            ["Active"] = false,
+                            ["FormName"] = ""
+                        }
+                    },
+                    ["Funct"] = "CheckColours"
+                }
+            }
+
+            -- Send the requests to the server
+            game:GetService("ReplicatedStorage"):WaitForChild("ClientFolder"):WaitForChild("CoreRemote"):FireServer(unpack(args1))
+            game:GetService("ReplicatedStorage"):WaitForChild("ClientFolder"):WaitForChild("CoreRemote"):FireServer(unpack(args2))
+            game:GetService("ReplicatedStorage"):WaitForChild("ClientFolder"):WaitForChild("CoreRemote"):FireServer(unpack(args3))
+            game:GetService("ReplicatedStorage"):WaitForChild("ClientFolder"):WaitForChild("CoreRemote"):FireServer(unpack(args4))
+
+            task.wait(1) -- Wait a bit before continuing the loop
+        end
+    else
+        toggleButton.Text = "Start Script"
+
+        -- Stop the script and set aura color to 90, 0, 0
+        local args2 = {
+            [1] = {
+                ["Scope"] = "OCModule",
+                ["Info"] = {
+                    ["Slot"] = "Ki1Colour",
+                    ["Colour"] = {200, 150, 0}, -- Set color to 90, 0, 0
+                    ["FormCustomising"] = {
+                        ["FormInfo"] = {},
+                        ["Active"] = false,
+                        ["FormName"] = ""
+                    }
+                },
+                ["Funct"] = "CheckColours"
+            }
+        }
+
+        -- Send the request to the server to update the aura color
+        game:GetService("ReplicatedStorage"):WaitForChild("ClientFolder"):WaitForChild("CoreRemote"):FireServer(unpack(args2))
+    end
+end)
 end)
