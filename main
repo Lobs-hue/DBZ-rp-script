@@ -51,6 +51,10 @@ local Lobs_Forms_Tab = Window:NewTab('Lobs Forms')
 
 local Lobs_Forms_Section = Lobs_Forms_Tab:NewSection("Ykwim")
 
+local Threads_Tab = Window:NewTab('Threads')
+
+local Threads_Section = Threads_Tab:NewSection("Ykwim")
+
 -- // Sliders Section
 
 
@@ -597,4 +601,559 @@ toggleButton.MouseButton1Click:Connect(function()
         game:GetService("ReplicatedStorage"):WaitForChild("ClientFolder"):WaitForChild("CoreRemote"):FireServer(unpack(args2))
     end
 end)
+end)
+
+-- // Thread Section
+Threads_Section:NewButton("Xai reset", "ykwim", function()
+    local args1 = {
+        [1] = {
+            ["Scope"] = "OCModule",
+            ["Info"] = {},
+            ["Funct"] = "FinishOCMaker"
+        }
+    }
+
+    local args3 = {
+        [1] = {
+            ["Scope"] = "OCModule",
+            ["Info"] = {},
+            ["Funct"] = "RetrieveInfo"
+        }
+    }
+
+    local args2 = {
+        [1] = {
+            ["Scope"] = "OCModule",
+            ["Info"] = {
+                ["Slot"] = "Ki1Colour",
+                ["Colour"] = {90, 0, 0}, -- Set color to 90, 0, 0
+                ["FormCustomising"] = {
+                    ["FormInfo"] = {},
+                    ["Active"] = false,
+                    ["FormName"] = ""
+                }
+            },
+            ["Funct"] = "CheckColours"
+        }
+    }
+
+    -- Send the request to the server to update the aura color
+    game:GetService("ReplicatedStorage"):WaitForChild("ClientFolder"):WaitForChild("CoreRemote"):FireServer(unpack(args2))
+    game:GetService("ReplicatedStorage"):WaitForChild("ClientFolder"):WaitForChild("CoreRemote"):FireServer(unpack(args1))
+    game:GetService("ReplicatedStorage"):WaitForChild("ClientFolder"):WaitForChild("CoreRemote"):FireServer(unpack(args3))
+end)
+
+Threads_Section:NewButton("Lobs reset", "ykwim", function()
+    local args1 = {
+        [1] = {
+            ["Scope"] = "OCModule",
+            ["Info"] = {},
+            ["Funct"] = "FinishOCMaker"
+        }
+    }
+
+    local args3 = {
+        [1] = {
+            ["Scope"] = "OCModule",
+            ["Info"] = {},
+            ["Funct"] = "RetrieveInfo"
+        }
+    }
+
+    local args2 = {
+        [1] = {
+            ["Scope"] = "OCModule",
+            ["Info"] = {
+                ["Slot"] = "Ki1Colour",
+                ["Colour"] = {200, 150, 0}, -- Set color to 90, 0, 0
+                ["FormCustomising"] = {
+                    ["FormInfo"] = {},
+                    ["Active"] = false,
+                    ["FormName"] = ""
+                }
+            },
+            ["Funct"] = "CheckColours"
+        }
+    }
+
+    -- Send the request to the server to update the aura color
+    game:GetService("ReplicatedStorage"):WaitForChild("ClientFolder"):WaitForChild("CoreRemote"):FireServer(unpack(args2))
+    game:GetService("ReplicatedStorage"):WaitForChild("ClientFolder"):WaitForChild("CoreRemote"):FireServer(unpack(args1))
+    game:GetService("ReplicatedStorage"):WaitForChild("ClientFolder"):WaitForChild("CoreRemote"):FireServer(unpack(args3))
+end)
+
+Threads_Section:NewButton("Consciousness", "ykwim", function()
+    local args1 = {
+        [1] = {
+            ["Scope"] = "OCModule",
+            ["Info"] = {},
+            ["Funct"] = "FinishOCMaker"
+        }
+    }
+
+    local args3 = {
+        [1] = {
+            ["Scope"] = "OCModule",
+            ["Info"] = {},
+            ["Funct"] = "RetrieveInfo"
+        }
+    }
+
+    local args2 = {
+        [1] = {
+            ["Scope"] = "OCModule",
+            ["Info"] = {
+                ["Slot"] = "Ki1Colour",
+                ["Colour"] = {255, 255, 255}, -- Set color to 90, 0, 0
+                ["FormCustomising"] = {
+                    ["FormInfo"] = {},
+                    ["Active"] = false,
+                    ["FormName"] = ""
+                }
+            },
+            ["Funct"] = "CheckColours"
+        }
+    }
+
+    -- Send the request to the server to update the aura color
+    game:GetService("ReplicatedStorage"):WaitForChild("ClientFolder"):WaitForChild("CoreRemote"):FireServer(unpack(args2))
+    game:GetService("ReplicatedStorage"):WaitForChild("ClientFolder"):WaitForChild("CoreRemote"):FireServer(unpack(args1))
+    game:GetService("ReplicatedStorage"):WaitForChild("ClientFolder"):WaitForChild("CoreRemote"):FireServer(unpack(args3))
+end)
+
+Threads_Section:NewButton("Anti", "ykwim", function()
+    local args1 = {
+        [1] = {
+            ["Scope"] = "OCModule",
+            ["Info"] = {},
+            ["Funct"] = "FinishOCMaker"
+        }
+    }
+
+    local args3 = {
+        [1] = {
+            ["Scope"] = "OCModule",
+            ["Info"] = {},
+            ["Funct"] = "RetrieveInfo"
+        }
+    }
+
+    local args2 = {
+        [1] = {
+            ["Scope"] = "OCModule",
+            ["Info"] = {
+                ["Slot"] = "Ki1Colour",
+                ["Colour"] = {12, 15, 39}, -- Set color to 90, 0, 0
+                ["FormCustomising"] = {
+                    ["FormInfo"] = {},
+                    ["Active"] = false,
+                    ["FormName"] = ""
+                }
+            },
+            ["Funct"] = "CheckColours"
+        }
+    }
+
+    -- Send the request to the server to update the aura color
+    game:GetService("ReplicatedStorage"):WaitForChild("ClientFolder"):WaitForChild("CoreRemote"):FireServer(unpack(args2))
+    game:GetService("ReplicatedStorage"):WaitForChild("ClientFolder"):WaitForChild("CoreRemote"):FireServer(unpack(args1))
+    game:GetService("ReplicatedStorage"):WaitForChild("ClientFolder"):WaitForChild("CoreRemote"):FireServer(unpack(args3))
+end)
+
+Threads_Section:NewButton("Control", "ykwim", function()
+    local args1 = {
+        [1] = {
+            ["Scope"] = "OCModule",
+            ["Info"] = {},
+            ["Funct"] = "FinishOCMaker"
+        }
+    }
+
+    local args3 = {
+        [1] = {
+            ["Scope"] = "OCModule",
+            ["Info"] = {},
+            ["Funct"] = "RetrieveInfo"
+        }
+    }
+
+    local args2 = {
+        [1] = {
+            ["Scope"] = "OCModule",
+            ["Info"] = {
+                ["Slot"] = "Ki1Colour",
+                ["Colour"] = {0, 219, 246}, -- Set color to 90, 0, 0
+                ["FormCustomising"] = {
+                    ["FormInfo"] = {},
+                    ["Active"] = false,
+                    ["FormName"] = ""
+                }
+            },
+            ["Funct"] = "CheckColours"
+        }
+    }
+
+    -- Send the request to the server to update the aura color
+    game:GetService("ReplicatedStorage"):WaitForChild("ClientFolder"):WaitForChild("CoreRemote"):FireServer(unpack(args2))
+    game:GetService("ReplicatedStorage"):WaitForChild("ClientFolder"):WaitForChild("CoreRemote"):FireServer(unpack(args1))
+    game:GetService("ReplicatedStorage"):WaitForChild("ClientFolder"):WaitForChild("CoreRemote"):FireServer(unpack(args3))
+end)
+
+Threads_Section:NewButton("Law", "ykwim", function()
+    local args3 = {
+        [1] = {
+            ["Scope"] = "OCModule",
+            ["Info"] = {},
+            ["Funct"] = "RetrieveInfo"
+        }
+    }
+
+
+    local args1 = {
+        [1] = {
+            ["Scope"] = "OCModule",
+            ["Info"] = {},
+            ["Funct"] = "FinishOCMaker"
+        }
+    }
+
+    local args2 = {
+        [1] = {
+            ["Scope"] = "OCModule",
+            ["Info"] = {
+                ["Slot"] = "Ki1Colour",
+                ["Colour"] = {19, 0, 214}, -- Set color to 90, 0, 0
+                ["FormCustomising"] = {
+                    ["FormInfo"] = {},
+                    ["Active"] = false,
+                    ["FormName"] = ""
+                }
+            },
+            ["Funct"] = "CheckColours"
+        }
+    }
+
+    -- Send the request to the server to update the aura color
+    game:GetService("ReplicatedStorage"):WaitForChild("ClientFolder"):WaitForChild("CoreRemote"):FireServer(unpack(args2))
+    game:GetService("ReplicatedStorage"):WaitForChild("ClientFolder"):WaitForChild("CoreRemote"):FireServer(unpack(args1))
+    game:GetService("ReplicatedStorage"):WaitForChild("ClientFolder"):WaitForChild("CoreRemote"):FireServer(unpack(args3))
+end)
+
+Threads_Section:NewButton("Time", "ykwim", function()
+    local args1 = {
+        [1] = {
+            ["Scope"] = "OCModule",
+            ["Info"] = {},
+            ["Funct"] = "FinishOCMaker"
+        }
+    }
+
+    local args3 = {
+        [1] = {
+            ["Scope"] = "OCModule",
+            ["Info"] = {},
+            ["Funct"] = "RetrieveInfo"
+        }
+    }
+
+    local args2 = {
+        [1] = {
+            ["Scope"] = "OCModule",
+            ["Info"] = {
+                ["Slot"] = "Ki1Colour",
+                ["Colour"] = {206, 159, 11}, -- Set color to 90, 0, 0
+                ["FormCustomising"] = {
+                    ["FormInfo"] = {},
+                    ["Active"] = false,
+                    ["FormName"] = ""
+                }
+            },
+            ["Funct"] = "CheckColours"
+        }
+    }
+
+    -- Send the request to the server to update the aura color
+    game:GetService("ReplicatedStorage"):WaitForChild("ClientFolder"):WaitForChild("CoreRemote"):FireServer(unpack(args2))
+    game:GetService("ReplicatedStorage"):WaitForChild("ClientFolder"):WaitForChild("CoreRemote"):FireServer(unpack(args1))
+    game:GetService("ReplicatedStorage"):WaitForChild("ClientFolder"):WaitForChild("CoreRemote"):FireServer(unpack(args3))
+end)
+
+Threads_Section:NewButton("Solar", "ykwim", function()
+    local args1 = {
+        [1] = {
+            ["Scope"] = "OCModule",
+            ["Info"] = {},
+            ["Funct"] = "FinishOCMaker"
+        }
+    }
+
+    local args2 = {
+        [1] = {
+            ["Scope"] = "OCModule",
+            ["Info"] = {
+                ["Slot"] = "Ki1Colour",
+                ["Colour"] = {199, 70, 0}, -- Set color to 90, 0, 0
+                ["FormCustomising"] = {
+                    ["FormInfo"] = {},
+                    ["Active"] = false,
+                    ["FormName"] = ""
+                }
+            },
+            ["Funct"] = "CheckColours"
+        }
+    }
+
+    local args3 = {
+        [1] = {
+            ["Scope"] = "OCModule",
+            ["Info"] = {},
+            ["Funct"] = "RetrieveInfo"
+        }
+    }
+
+    -- Send the request to the server to update the aura color
+    game:GetService("ReplicatedStorage"):WaitForChild("ClientFolder"):WaitForChild("CoreRemote"):FireServer(unpack(args2))
+    game:GetService("ReplicatedStorage"):WaitForChild("ClientFolder"):WaitForChild("CoreRemote"):FireServer(unpack(args1))
+    game:GetService("ReplicatedStorage"):WaitForChild("ClientFolder"):WaitForChild("CoreRemote"):FireServer(unpack(args3))
+
+end)
+
+Threads_Section:NewButton("Violence", "ykwim", function()
+    local args1 = {
+        [1] = {
+            ["Scope"] = "OCModule",
+            ["Info"] = {},
+            ["Funct"] = "FinishOCMaker"
+        }
+    }
+
+    local args3 = {
+        [1] = {
+            ["Scope"] = "OCModule",
+            ["Info"] = {},
+            ["Funct"] = "RetrieveInfo"
+        }
+    }
+
+    local args2 = {
+        [1] = {
+            ["Scope"] = "OCModule",
+            ["Info"] = {
+                ["Slot"] = "Ki1Colour",
+                ["Colour"] = {200, 0, 0}, -- Set color to 90, 0, 0
+                ["FormCustomising"] = {
+                    ["FormInfo"] = {},
+                    ["Active"] = false,
+                    ["FormName"] = ""
+                }
+            },
+            ["Funct"] = "CheckColours"
+        }
+    }
+
+    -- Send the request to the server to update the aura color
+    game:GetService("ReplicatedStorage"):WaitForChild("ClientFolder"):WaitForChild("CoreRemote"):FireServer(unpack(args2))
+    game:GetService("ReplicatedStorage"):WaitForChild("ClientFolder"):WaitForChild("CoreRemote"):FireServer(unpack(args1))
+    game:GetService("ReplicatedStorage"):WaitForChild("ClientFolder"):WaitForChild("CoreRemote"):FireServer(unpack(args3))
+
+end)
+
+Threads_Section:NewButton("Energy", "ykwim", function()
+    local args1 = {
+        [1] = {
+            ["Scope"] = "OCModule",
+            ["Info"] = {},
+            ["Funct"] = "FinishOCMaker"
+        }
+    }
+
+    local args3 = {
+        [1] = {
+            ["Scope"] = "OCModule",
+            ["Info"] = {},
+            ["Funct"] = "RetrieveInfo"
+        }
+    }
+
+    local args2 = {
+        [1] = {
+            ["Scope"] = "OCModule",
+            ["Info"] = {
+                ["Slot"] = "Ki1Colour",
+                ["Colour"] = {205, 35, 35}, -- Set color to 90, 0, 0
+                ["FormCustomising"] = {
+                    ["FormInfo"] = {},
+                    ["Active"] = false,
+                    ["FormName"] = ""
+                }
+            },
+            ["Funct"] = "CheckColours"
+        }
+    }
+
+    -- Send the request to the server to update the aura color
+    game:GetService("ReplicatedStorage"):WaitForChild("ClientFolder"):WaitForChild("CoreRemote"):FireServer(unpack(args2))
+    game:GetService("ReplicatedStorage"):WaitForChild("ClientFolder"):WaitForChild("CoreRemote"):FireServer(unpack(args1))
+    game:GetService("ReplicatedStorage"):WaitForChild("ClientFolder"):WaitForChild("CoreRemote"):FireServer(unpack(args3))
+
+end)
+
+Threads_Section:NewButton("Radiation", "ykwim", function()
+    local args1 = {
+        [1] = {
+            ["Scope"] = "OCModule",
+            ["Info"] = {},
+            ["Funct"] = "FinishOCMaker"
+        }
+    }
+
+    local args3 = {
+        [1] = {
+            ["Scope"] = "OCModule",
+            ["Info"] = {},
+            ["Funct"] = "RetrieveInfo"
+        }
+    }
+
+    local args2 = {
+        [1] = {
+            ["Scope"] = "OCModule",
+            ["Info"] = {
+                ["Slot"] = "Ki1Colour",
+                ["Colour"] = {63, 188, 0}, -- Set color to 90, 0, 0
+                ["FormCustomising"] = {
+                    ["FormInfo"] = {},
+                    ["Active"] = false,
+                    ["FormName"] = ""
+                }
+            },
+            ["Funct"] = "CheckColours"
+        }
+    }
+
+    -- Send the request to the server to update the aura color
+    game:GetService("ReplicatedStorage"):WaitForChild("ClientFolder"):WaitForChild("CoreRemote"):FireServer(unpack(args2))
+    game:GetService("ReplicatedStorage"):WaitForChild("ClientFolder"):WaitForChild("CoreRemote"):FireServer(unpack(args1))
+    game:GetService("ReplicatedStorage"):WaitForChild("ClientFolder"):WaitForChild("CoreRemote"):FireServer(unpack(args3))
+
+end)
+
+Threads_Section:NewButton("Life", "ykwim", function()
+    local args1 = {
+        [1] = {
+            ["Scope"] = "OCModule",
+            ["Info"] = {},
+            ["Funct"] = "FinishOCMaker"
+        }
+    }
+
+    local args3 = {
+        [1] = {
+            ["Scope"] = "OCModule",
+            ["Info"] = {},
+            ["Funct"] = "RetrieveInfo"
+        }
+    }
+
+    local args2 = {
+        [1] = {
+            ["Scope"] = "OCModule",
+            ["Info"] = {
+                ["Slot"] = "Ki1Colour",
+                ["Colour"] = {76, 216, 58}, -- Set color to 90, 0, 0
+                ["FormCustomising"] = {
+                    ["FormInfo"] = {},
+                    ["Active"] = false,
+                    ["FormName"] = ""
+                }
+            },
+            ["Funct"] = "CheckColours"
+        }
+    }
+
+    -- Send the request to the server to update the aura color
+    game:GetService("ReplicatedStorage"):WaitForChild("ClientFolder"):WaitForChild("CoreRemote"):FireServer(unpack(args2))
+    game:GetService("ReplicatedStorage"):WaitForChild("ClientFolder"):WaitForChild("CoreRemote"):FireServer(unpack(args1))
+    game:GetService("ReplicatedStorage"):WaitForChild("ClientFolder"):WaitForChild("CoreRemote"):FireServer(unpack(args3))
+
+end)
+
+Threads_Section:NewButton("Cosmic", "ykwim", function()
+    local args1 = {
+        [1] = {
+            ["Scope"] = "OCModule",
+            ["Info"] = {},
+            ["Funct"] = "FinishOCMaker"
+        }
+    }
+
+    local args3 = {
+        [1] = {
+            ["Scope"] = "OCModule",
+            ["Info"] = {},
+            ["Funct"] = "RetrieveInfo"
+        }
+    }
+
+    local args2 = {
+        [1] = {
+            ["Scope"] = "OCModule",
+            ["Info"] = {
+                ["Slot"] = "Ki1Colour",
+                ["Colour"] = {128, 0, 214}, -- Set color to 90, 0, 0
+                ["FormCustomising"] = {
+                    ["FormInfo"] = {},
+                    ["Active"] = false,
+                    ["FormName"] = ""
+                }
+            },
+            ["Funct"] = "CheckColours"
+        }
+    }
+
+    -- Send the request to the server to update the aura color
+    game:GetService("ReplicatedStorage"):WaitForChild("ClientFolder"):WaitForChild("CoreRemote"):FireServer(unpack(args2))
+    game:GetService("ReplicatedStorage"):WaitForChild("ClientFolder"):WaitForChild("CoreRemote"):FireServer(unpack(args1))
+    game:GetService("ReplicatedStorage"):WaitForChild("ClientFolder"):WaitForChild("CoreRemote"):FireServer(unpack(args3))
+
+end)
+
+Threads_Section:NewButton("Shadow", "ykwim", function()
+    local args1 = {
+        [1] = {
+            ["Scope"] = "OCModule",
+            ["Info"] = {},
+            ["Funct"] = "FinishOCMaker"
+        }
+    }
+
+    local args3 = {
+        [1] = {
+            ["Scope"] = "OCModule",
+            ["Info"] = {},
+            ["Funct"] = "RetrieveInfo"
+        }
+    }
+
+    local args2 = {
+        [1] = {
+            ["Scope"] = "OCModule",
+            ["Info"] = {
+                ["Slot"] = "Ki1Colour",
+                ["Colour"] = {128, 0, 214}, -- Set color to 90, 0, 0
+                ["FormCustomising"] = {
+                    ["FormInfo"] = {},
+                    ["Active"] = false,
+                    ["FormName"] = ""
+                }
+            },
+            ["Funct"] = "CheckColours"
+        }
+    }
+
+    -- Send the request to the server to update the aura color
+    game:GetService("ReplicatedStorage"):WaitForChild("ClientFolder"):WaitForChild("CoreRemote"):FireServer(unpack(args2))
+    game:GetService("ReplicatedStorage"):WaitForChild("ClientFolder"):WaitForChild("CoreRemote"):FireServer(unpack(args1))
+    game:GetService("ReplicatedStorage"):WaitForChild("ClientFolder"):WaitForChild("CoreRemote"):FireServer(unpack(args3))
+
 end)
